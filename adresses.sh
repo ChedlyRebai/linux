@@ -26,8 +26,15 @@ while IF= read -r line; do
 done < "$input_file"
 echo
 
-echo -e "\nLignes qui commencent par un S majuscule:"
-grep -E '^S' dataTD2.txt
+
+echo "Lignes commençant par un 'S' majuscule :"
+while IFS= read -r line; do
+    if [[ "$line" =~ ^S ]]; then
+        echo "$line"
+    fi
+done < "$input_file"
+echo
+
 
 echo "Enregistrement des numéros de téléphone dans '$output_file' :"
 while IF= read -r line; do
