@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Déclaration et initialisation d'un tableau
+nombres=(1 2 3 4 7)
+
+filename="script.sh"
+
+if [ -e $filename ] && [ -w $filename ] ; then 
+    echo -e "file writable \c "
+    cat $filename >> echo "hello world"
+fi
+
+
